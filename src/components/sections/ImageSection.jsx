@@ -40,7 +40,7 @@ const ImageSection = () => {
                     id={img.id}
                     src={img.thumbnail}
                     alt="thumbnail"
-                    className={`hover:opacity-60 duration-200 ${
+                    className={`hover:opacity-60 w-full object-cover duration-200 ${
                         img.id == imageIndex && "  opacity-30"
                     }`}
                 />
@@ -62,14 +62,14 @@ const ImageSection = () => {
 
                 <button
                     onClick={previousImage}
-                    className="absolute grid place-content-center top-1/2 -translate-y-1/2 left-5 rounded-full bg-light p-3 aspect-square active:scale-110 active:text-element md:hidden">
-                    <FontAwesomeIcon icon={faChevronLeft} />
+                    className="absolute grid place-content-center top-1/2 -translate-y-1/2 left-5 rounded-full bg-light p-3 active:scale-110 active:text-element md:hidden">
+                    <FontAwesomeIcon className="aspect-square" icon={faChevronLeft} />
                 </button>
 
                 <button
                     onClick={nextImage}
-                    className="absolute grid place-content-center top-1/2 -translate-y-1/2 right-5 rounded-full bg-light p-3 aspect-square active:scale-110 active:text-element  md:hidden">
-                    <FontAwesomeIcon icon={faChevronRight} />
+                    className="absolute grid place-content-center top-1/2 -translate-y-1/2 right-5 rounded-full bg-light p-3 active:scale-110 active:text-element  md:hidden">
+                    <FontAwesomeIcon className="aspect-square" icon={faChevronRight} />
                 </button>
 
                 <div className="hidden md:grid grid-cols-4 gap-8">{thumbnailImages}</div>
@@ -97,13 +97,13 @@ const ImageSection = () => {
                         <button
                             onClick={previousImage}
                             className="absolute grid place-content-center top-1/2 -translate-y-1/2 left-0 -translate-x-1/2 rounded-full bg-light p-4 aspect-square active:scale-95 hover:text-element ">
-                            <FontAwesomeIcon icon={faChevronLeft} />
+                            <FontAwesomeIcon className="aspect-square" icon={faChevronLeft} />
                         </button>
 
                         <button
                             onClick={nextImage}
                             className="absolute grid place-content-center top-1/2 -translate-y-1/2 translate-x-1/2 right-0 rounded-full bg-light p-4 aspect-square active:scale-95 hover:text-element ">
-                            <FontAwesomeIcon icon={faChevronRight} />
+                            <FontAwesomeIcon className="aspect-square" icon={faChevronRight} />
                         </button>
                     </div>
 

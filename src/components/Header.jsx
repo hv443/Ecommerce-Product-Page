@@ -51,7 +51,7 @@ const Header = () => {
                 className={({ isActive }) => {
                     return isActive
                         ? "border-element border-b-2 duration-300 cursor-pointer block md:py-6 text-primary"
-                        : "border-transparent border-b-2 hover:border-primary duration-300 cursor-pointer block md:py-6 text-primary font-bold md:text-secondary";
+                        : "border-transparent border-b-2 hover:border-primary duration-300 cursor-pointer block md:py-6 text-primary font-bold md:font-semibold md:text-secondary";
                 }}>
                 {link.name}
             </NavLink>
