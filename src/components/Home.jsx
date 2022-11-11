@@ -1,11 +1,13 @@
 import React from "react";
 import DetailsSection from "./sections/DetailsSection";
-import Photo from "./sections/ImageSection";
+import ImageSection from "./sections/ImageSection";
 
 const Home = () => {
     return (
-        <main className="md:grid grid-cols-2 md:max-w-[60%] md:min-w-[780px] md:mx-auto md:mt-[10vh] md:gap-24 place-content-center">
-            <Photo />
+        <main
+            className="md:grid grid-cols-2 place-content-center md:py-16 md:px-12 md:gap-16
+        lg:px-36 xl:px-72 xl:gap-20">
+            <ImageSection />
             <DetailsSection />
         </main>
     );

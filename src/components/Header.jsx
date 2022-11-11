@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping, faXmark, faBars } from "@fortawesome/free-solid-svg-icons";
+
+import CartItem from "./CartItem";
+
 import logo from "../assets/logo/logo.svg";
-import cartIcon from "../assets/icons/icon-cart.svg";
-import closeIcon from "../assets/icons/icon-close.svg";
-import menuIcon from "../assets/icons/icon-menu.svg";
 import avatarSvg from "../assets/avatar/image-avatar.png";
 
 const Header = () => {
@@ -47,8 +50,8 @@ const Header = () => {
                 to={link.path}
                 className={({ isActive }) => {
                     return isActive
-                        ? "border-element border-b-2 hover:border-element duration-300 cursor-pointer block md:py-6 "
-                        : "border-transparent border-b-2 hover:border-element duration-300 cursor-pointer block md:py-6";
+                        ? "border-element border-b-2 duration-300 cursor-pointer block md:py-6 text-primary"
+                        : "border-transparent border-b-2 hover:border-primary duration-300 cursor-pointer block md:py-6 text-primary font-bold md:text-secondary";
                 }}>
                 {link.name}
             </NavLink>
@@ -56,10 +59,10 @@ const Header = () => {
     });
 
     return (
-        <header className="flex justify-between items-center mx-auto border-b p-4 md:p-0 md:w-11/12 lg:w-5/6">
+        <header className="flex justify-between items-center mx-auto border-b p-4 md:p-0 md:w-11/12 xl:w-9/12">
             <div className="flex items-center space-x-5 md:space-x-0">
                 <button className="md:hidden" onClick={toggleMenu}>
-                    <img src={menuIcon} alt="menu-icon" />
+                    <FontAwesomeIcon icon={faBars} />
                 </button>
                 <NavLink to="/">
                     <img src={logo} alt="logo" />
@@ -68,18 +71,19 @@ const Header = () => {
             <nav
                 className={`${
                     isMenuOpen ? "translate-x-0" : "-translate-x-full"
-                } absolute h-full z-20 left-0 top-0 w-2/3 text-secondary font-semibold duration-300 bg-regular p-8 
+                } absolute h-full z-20 left-0 top-0 w-2/3 font-semibold duration-300 bg-light p-8 
                 md:relative md:p-0 md:translate-x-0 md:bg-transparent `}>
-                <button className="mb-16 md:hidden">
-                    <img onClick={toggleMenu} src={closeIcon} alt="close-icon" />
+                <button onClick={toggleMenu} className="mb-16 md:hidden">
+                    <FontAwesomeIcon icon={faXmark} />
                 </button>
 
                 <div className="space-y-8 md:flex md:space-y-0 md:space-x-6">{navLinks}</div>
             </nav>
 
-            <div className="flex items-center space-x-5">
+            <div className="flex items-center space-x-5 md:relative">
+                <CartItem />
                 <button>
-                    <img src={cartIcon} alt="menu-icon" />
+                    <FontAwesomeIcon icon={faCartShopping} />
                 </button>
                 <div>
                     <img
