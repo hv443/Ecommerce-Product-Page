@@ -13,7 +13,7 @@ function App() {
     return (
         <BrowserRouter>
             <ContextProvider>
-                <div className="overflow-hidden min-h-screen relative">
+                <div className="overflow-hidde min-h-screen relative">
                     <Header />
 
                     <Routes>

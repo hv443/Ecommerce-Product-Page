@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        "cartShadow": "0px 10px 30px 0px rgba(0,0,0,0.3)"
+      },
       colors: {
         'element': "var(--Orange)",
         'element-pale': "var(--Pale--orange)",

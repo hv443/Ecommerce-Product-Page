@@ -80,6 +80,10 @@ const Header = () => {
 
     return (
         <header className="flex justify-between items-center mx-auto border-b p-4 md:p-0 md:w-11/12 xl:w-9/12">
+            {isMenuOpen && (
+                <div className="md:hidden absolute left-0 top-0 w-full h-full bg-black/70 z-20"></div>
+            )}
+
             <div className="flex items-center space-x-5 md:space-x-0">
                 <button className="md:hidden" onClick={toggleMenu}>
                     <FontAwesomeIcon icon={faBars} />
@@ -91,7 +95,7 @@ const Header = () => {
             <nav
                 ref={menuRef}
                 className={`${
-                    isMenuOpen ? "translate-x-0" : "-translate-x-full"
+                    isMenuOpen ? "translate-x-0 " : "-translate-x-full"
                 } absolute h-full z-20 left-0 top-0 w-2/3 font-semibold duration-300 bg-light p-8 
                 md:relative md:p-0 md:translate-x-0 md:bg-transparent `}>
                 <button onClick={toggleMenu} className="mb-16 md:hidden">
@@ -102,7 +106,7 @@ const Header = () => {
             </nav>
 
             <div className="flex items-center gap-5 md:relative">
-                {isCartOpen && <CartItem />}
+                {isCartOpen && <CartItem toggleCart={toggleCart} setIsCartOpen={setIsCartOpen} />}
                 <button className="relative" onClick={toggleCart}>
                     {cartItemCount > 0 && (
                         <span className="absolute text-light px-2 text-[10px] bg-element -top-1 -right-3 rounded-xl pointer-events-none">

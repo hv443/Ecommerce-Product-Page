@@ -4,7 +4,7 @@ import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import items from "../assets/itemsArray";
 import { useCart, useProduct } from "../context/useContext";
 
-const CartItem = () => {
+const CartItem = ({ toggleCart, setIsCartOpen }) => {
     const { cartItemCount, setCartItemCount } = useCart();
     const { productIndex } = useProduct();
 
@@ -18,8 +18,8 @@ const CartItem = () => {
     //             setIsCartOpen(false);
     //         }
     //     }
-    //     console.log("cart");
     //     document.addEventListener("mousedown", closeCart);
+
     //     return () => {
     //         document.removeEventListener("mousedown", closeCart);
     //     };
@@ -28,7 +28,7 @@ const CartItem = () => {
     return (
         <div
             // ref={cartRef}
-            className="absolute shadow-lg rounded-md z-20 bg-light left-1/2 -translate-x-1/2 top-20 min-w-[95%] md:min-w-[360px] md:top-full md:left-full md:-translate-x-full">
+            className="absolute shadow-cartShadow rounded-md z-20 bg-light left-1/2 -translate-x-1/2 top-20 min-w-[95%] md:min-w-[360px] md:top-[150%] md:left-full md:-translate-x-full">
             <h1 className="font-bold p-5 border-b ">Cart</h1>
             {cartItemCount > 0 ? (
                 <div className="p-5 space-y-5 text-secondary">
@@ -50,7 +50,7 @@ const CartItem = () => {
                                 className="hover:text-primary duration-200"
                                 icon={faTrashCan}
                             />
-                        </button>{" "}
+                        </button>
                     </div>
 
                     <button className="w-full p-3 bg-element rounded-md text-light font-semibold active:scale-95 hover:opacity-70 duration-200">

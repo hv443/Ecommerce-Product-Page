@@ -39,18 +39,18 @@ const DetailsSection = () => {
 
             <div className="space-y-3 md:flex md:space-y-0 md:space-x-3">
                 <div className="flex justify-between items-center bg-regular rounded-md md:flex-[35%]">
-                    <button onClick={removeProduct} className="p-5 md:p-3">
+                    <button onClick={removeProduct} className="p-3">
                         <FontAwesomeIcon className="text-element" icon={faMinus} />
                     </button>
                     <span>{productCount}</span>
-                    <button onClick={addProduct} className="p-5 md:p-3">
+                    <button onClick={addProduct} className="p-3">
                         <FontAwesomeIcon className="text-element" icon={faPlus} />
                     </button>
                 </div>
 
                 <button
                     onClick={addToCart}
-                    className="w-full flex justify-center items-center space-x-3 p-3 px-5 bg-element rounded-md text-light shadow-2xl shadow-element md:flex-[65%] active:scale-95 hover:opacity-70 duration-200">
+                    className="w-full flex justify-center items-center space-x-3 p-3 bg-element rounded-md text-light shadow-2xl shadow-element md:flex-[65%] active:scale-95 hover:opacity-70 duration-200">
                     <FontAwesomeIcon icon={faCartShopping} />
                     <span>Add to cart</span>
                 </button>

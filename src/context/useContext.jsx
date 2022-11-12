@@ -11,7 +11,7 @@ export const useProduct = () => {
 };
 
 export function ContextProvider({ children }) {
-    const [cartItemCount, setCartItemCount] = useState(false);
+    const [cartItemCount, setCartItemCount] = useState(0);
     const [productCount, setProductCount] = useState(0);
     const productIndex = 0;
 
