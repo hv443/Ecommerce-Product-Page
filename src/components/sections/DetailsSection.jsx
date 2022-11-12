@@ -1,14 +1,13 @@
-import React from "react";
-import { items } from "../../assets/itemsArray";
+import React, { useState } from "react";
+import items from "../../assets/itemsArray";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus, faCartShopping } from "@fortawesome/free-solid-svg-icons";
-
-import { useState } from "react";
+import { useProduct } from "../../context/useContext";
 
 const DetailsSection = () => {
-    const [productCount, setProductCount] = useState(0);
-    const item = items[0];
+    const { productCount, setProductCount, addToCart, productIndex } = useProduct();
+    const item = items[productIndex];
 
     function addProduct() {
         setProductCount((pre) => pre + 1);
@@ -49,7 +48,9 @@ const DetailsSection = () => {
                     </button>
                 </div>
 
-                <button className="w-full flex justify-center items-center space-x-3 p-3 px-5 bg-element rounded-md text-light shadow-2xl shadow-element md:flex-[65%] active:scale-95 hover:opacity-70 duration-200">
+                <button
+                    onClick={addToCart}
+                    className="w-full flex justify-center items-center space-x-3 p-3 px-5 bg-element rounded-md text-light shadow-2xl shadow-element md:flex-[65%] active:scale-95 hover:opacity-70 duration-200">
                     <FontAwesomeIcon icon={faCartShopping} />
                     <span>Add to cart</span>
                 </button>

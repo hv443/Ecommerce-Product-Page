@@ -1,14 +1,16 @@
 import React from "react";
 import { useState } from "react";
-import { items } from "../../assets/itemsArray";
+import items from "../../assets/itemsArray";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight, faClose } from "@fortawesome/free-solid-svg-icons";
+import { useProduct } from "../../context/useContext";
 
 const ImageSection = () => {
+    const { productIndex } = useProduct();
     const [imageIndex, setImageIndex] = useState(0);
     const [enlargeImage, setEnlargeImage] = useState(false);
-    const allImages = items[0].images;
+    const allImages = items[productIndex].images;
 
     function toggleEnlargeImgae() {
         setEnlargeImage((pre) => !pre);

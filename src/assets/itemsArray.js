@@ -1,6 +1,6 @@
 import allImages from "./ImageArray"
 
-export const items = [
+const items = [
     {
         name: "fall limited edition sneakers",
         companyName: "Sneaker company",
@@ -9,3 +9,5 @@ export const items = [
         images: allImages
     }
 ]
+
+export default items
